@@ -124,6 +124,10 @@
           go-tools
           gccgo
         ];
+
+        js = with pkgs; [
+          nodePackages.typescript-language-server
+        ];
         # and easily check if they are included in lua
         format = with pkgs; [
         ];
@@ -149,10 +153,15 @@
             plenary-nvim
             nvim-notify
             nvim-tree-lua
+            typescript-tools-nvim
+            snacks-nvim
           ];
           extra = [
             oil-nvim
             nvim-web-devicons
+          ];
+          eyecandy = [
+            snacks-nvim
           ];
         };
         # You can retreive information from the
@@ -362,6 +371,7 @@
           lint = true;
           format = true;
           neonixdev = true;
+          eyecandy = true;
           test = {
             subtest1 = true;
           };
@@ -369,7 +379,7 @@
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.
           # go = true; # <- disabled but you could enable it with override or module on install
-
+          js = true;
           # this does not have an associated category of plugins, 
           # but lua can still check for it
           lspDebugMode = false;
