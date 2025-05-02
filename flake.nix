@@ -148,6 +148,7 @@
             vim-repeat
             plenary-nvim
             nvim-notify
+            nvim-tree-lua
           ];
           extra = [
             oil-nvim
