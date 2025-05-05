@@ -27,19 +27,23 @@ return {
               { icon = " ", key = "q", desc = "Quit",
                 action = ":qa" },
             },
+            preset = {
+              header = [[
+   ▄████▄   ▄▄▄     ▄▄▄█████▓▒███████▒
+  ▒██▀ ▀█  ▒████▄   ▓  ██▒ ▓▒▒ ▒ ▒ ▄▀░
+  ▒▓█    ▄ ▒██  ▀█▄ ▒ ▓██░ ▒░░ ▒ ▄▀▒░ 
+  ▒▓▓▄ ▄██▒░██▄▄▄▄██░ ▓██▓ ░   ▄▀▒   ░
+  ▒ ▓███▀ ░ ▓█   ▓██▒ ▒██▒ ░ ▒███████▒
+  ░ ░▒ ▒  ░ ▒▒   ▓▒█░ ▒ ░░   ░▒▒ ▓░▒░▒
+    ░  ▒     ▒   ▒▒ ░   ░    ░░▒ ▒ ░ ▒
+  ░          ░   ▒    ░      ░ ░ ░ ░ ░
+  ░ ░            ░  ░          ░ ░    
+]],
+            },
             -- Using the advanced template
             sections = {
               { section = "header" },
-              {
-                pane = 2,
-                section = "terminal",
-                -- cmd = "colorscript -e square",
-                -- Command provided by dw1-shell-color-scripts
-                cmd = "colorscript -e dna",
-                height = 5,
-                padding = 1,
-              },
-              { section = "keys", gap = 1, padding = 1 },
+             { section = "keys", gap = 1, padding = 0 },
               { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
               { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
               {

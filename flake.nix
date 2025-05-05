@@ -109,6 +109,7 @@
           universal-ctags
           ripgrep
           fd
+          dwt1-shell-color-scripts
         ];
         # these names are arbitrary.
         lint = with pkgs; [
