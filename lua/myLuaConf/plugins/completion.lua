@@ -48,6 +48,8 @@ return {
         -- See :h blink-cmp-config-keymap for configuring keymaps
         keymap =  {
           preset = 'default',
+          ['<Tab>'] = {'select_next'},
+          ['<S-Tab>'] = {'select_prev'},
         },
         cmdline = {
           enabled = true,

@@ -117,12 +117,12 @@ require('lze').load {
       filetypes = { "nix" },
     },
   },
-  {
+  --[[ {
     "ts_ls",
     lsp = {
       filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     },
-  },
+  }, ]]
   {
     "nixd",
     enabled = catUtils.isNixCats and (nixCats('nix') or nixCats('neonixdev')) or false,

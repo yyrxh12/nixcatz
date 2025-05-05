@@ -6,7 +6,6 @@
 --]]
 
 local M = {}
-
 --[[
   This file is for making your config still work WITHOUT nixCats.
   When you don't use nixCats to load your config,
