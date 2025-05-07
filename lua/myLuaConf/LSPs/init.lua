@@ -66,6 +66,13 @@ require('lze').load {
     end,
   },
   {
+    "cmake",
+    lsp = {
+      filetypes = {"cmake"};
+    },
+  }
+
+  {
     -- name of the lsp
     "lua_ls",
     enabled = nixCats('lua') or nixCats('neonixdev') or false,
