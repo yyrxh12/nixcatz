@@ -125,6 +125,7 @@
 
         ccpp = with pkgs; [
           clang
+          clang-tools
           cmake-language-server
         ];
 
