@@ -28,7 +28,7 @@ require('lze').load {
     -- NOTE: define a function for lsp,
     -- and it will run for all specs with type(plugin.lsp) == table
     -- when their filetype trigger loads them
-    lsp = function(plugin)
+ lsp = function(plugin)
       vim.lsp.config(plugin.name, plugin.lsp or {})
       vim.lsp.enable(plugin.name)
     end,
@@ -70,7 +70,7 @@ require('lze').load {
     lsp = {
       filetypes = {"cmake"};
     },
-  }
+  },
 
   {
     -- name of the lsp
