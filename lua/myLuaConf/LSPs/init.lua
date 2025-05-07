@@ -68,6 +68,7 @@ require('lze').load {
   {
     "cmake",
     for_cat = "ccpp",
+    single_file_support = true;
     lsp = {
       filetypes = {"cmake"};
     },
@@ -104,7 +105,9 @@ require('lze').load {
   {
     "clangd",
     for_cat = "ccpp",
+    on_plugin = "nvim-lspconfig";
     lsp = {
+      cmd = {"clangd", "--background-index"},
       filetypes = {
           "c", "cpp", "objcpp", "cuda", "proto", "cuda", "proto"
       },
