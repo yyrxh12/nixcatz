@@ -94,6 +94,17 @@ require('lze').load {
     -- also these are regular specs and you can use before and after and all the other normal fields
   },
   {
+    "clangd",
+    for_cat = "ccpp",
+    lsp = {
+      filetypes = {
+        filetypes = {
+          "c", "cpp", "objcpp", "cuda", "proto", "cuda", "proto"
+        },
+      },
+    },
+  },
+  {
     "gopls",
     for_cat = "go",
     -- if you don't provide the filetypes it asks lspconfig for them
