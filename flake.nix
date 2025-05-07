@@ -47,10 +47,7 @@
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
-
-  };
-
-  # see :help nixCats.flake.outputs
+    # see :help nixCats.flake.outputs
   outputs = { self, nixpkgs, ... }@inputs: let
     inherit (inputs.nixCats) utils;
     luaPath = "${./.}";

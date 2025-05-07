@@ -67,6 +67,8 @@ require('lze').load {
   },
   {
     "cmake",
+    for_cat = "ccpp",
+    on_plugin = "nvim-lspconfig",
     lsp = {
       filetypes = {"cmake"};
     },
@@ -103,6 +105,7 @@ require('lze').load {
   {
     "clangd",
     for_cat = "ccpp",
+    on_plugin = "nvim-lspconfig",
     lsp = {
       filetypes = {
         filetypes = {

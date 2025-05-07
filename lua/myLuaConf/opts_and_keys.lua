@@ -123,7 +123,18 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.g.clipboard = {
+  name = 'xclip',
+  copy = {
+    ['+'] = { 'xclip', '-quiet', '-i', '-selection', 'clipboard' },
+    ['*'] = { 'xclip', '-quiet', '-i', '-selection', 'primary' },
+  },
+  paste = {
+    ['+'] = { 'xclip', '-o', '-selection', 'clipboard' },
+    ['*'] = { 'xclip', '-o', '-selection', 'primary' },
+  },
+  cache_enabled = 1, -- cache MUST be enabled, or else it hangs on dd/y/x and all other copy operations
+}
 
 -- You should instead use these keybindings so that they are still easy to use, but dont conflict
 vim.keymap.set({"v", "x", "n"}, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
