@@ -11,6 +11,7 @@ vim.g.maplocalleader = ' '
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.linebreak = true
 
 -- Set highlight on search
 vim.opt.hlsearch = true
@@ -119,23 +120,16 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- kickstart.nvim starts you with this. 
 -- But it constantly clobbers your system clipboard whenever you delete anything.
+vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.g.clipboard = {
-  name = 'xclip',
-  copy = {
-    ['+'] = { 'xclip', '-quiet', '-i', '-selection', 'clipboard' },
-    ['*'] = { 'xclip', '-quiet', '-i', '-selection', 'primary' },
-  },
-  paste = {
-    ['+'] = { 'xclip', '-o', '-selection', 'clipboard' },
-    ['*'] = { 'xclip', '-o', '-selection', 'primary' },
-  },
-  cache_enabled = 1, -- cache MUST be enabled, or else it hangs on dd/y/x and all other copy operations
-}
-
+-- TABS --
+vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
+vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close Other Tabs" })
+vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
+vim.keymap.set("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "New Tab" })
+vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+vim.keymap.set("n", "<leader><S-Tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 -- You should instead use these keybindings so that they are still easy to use, but dont conflict
 vim.keymap.set({"v", "x", "n"}, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
 vim.keymap.set({"n", "v", "x"}, '<leader>Y', '"+yy', { noremap = true, silent = true, desc = 'Yank line to clipboard' })

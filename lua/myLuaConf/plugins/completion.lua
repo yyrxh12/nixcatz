@@ -48,7 +48,14 @@ return {
         -- See :h blink-cmp-config-keymap for configuring keymaps
         keymap =  {
           preset = 'default',
-          ['<Tab>'] = {'select_next'},
+         ['<Tab>'] = {
+           function(cmp)
+             if cmp.snippet_active() then return cmp.accept()
+             else return cmp.select_and_accept() end
+           end,
+          'snippet_forward',
+          'fallback'
+},
           ['<S-Tab>'] = {'select_prev'},
         },
         cmdline = {
